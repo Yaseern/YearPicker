@@ -1,0 +1,3 @@
+<select class="form-control year-select" name="{{fieldName}}" [(ngModel)]="model" (change)="onChangeSelection()" required="{{isRequired}}">
+  <option *ngFor="let year of yearList" value="{{year}}">{{year}}</option>
+</select>
