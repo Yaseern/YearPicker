@@ -1,0 +1,17 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "ngYYear",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "ng-yyear",
+      "kebab-case"
+    ]
+  }
+}

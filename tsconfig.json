@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-yas-year-picker": [
+        "dist/ng-yas-year-picker"
+      ],
+      "ng-yas-year-picker/*": [
+        "dist/ng-yas-year-picker/*"
+      ]
+    }
   }
 }
