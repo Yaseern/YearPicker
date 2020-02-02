@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {FormsModule} from '@angular/forms';
-import {BrowserModule} from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { YearComponent } from './year.component';
 
@@ -12,7 +12,8 @@ import { YearComponent } from './year.component';
     CommonModule,
     FormsModule
   ],
-  bootstrap: [YearComponent]
+  exports: [YearComponent]
 })
+
 export class YearModule {
 }
