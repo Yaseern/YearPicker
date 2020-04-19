@@ -53,16 +53,13 @@ class AppModule {}
 
 ## Options
 
-| Option            | Type                           | Default           | Description                                                                                                                                     |
-| ----------------- | ------------------------------ | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| yearModel         | input                          |                   | which binds select stores the user value in a variable   
-                                                 |
-| yearModelChange   | event                          |                   | On Change event when select the option                                                                        |
-| isRequired        | boolean                        | false             | If field is required then this should set true                                                                |
-| isQuarterYear     | boolean                        | false             | This should set true If you want to show Quarter year picker  ('Q1', 'Q2', 'Q3', 'Q4')
-                                                 |
-| fieldName         | string                         | empty             | This name is name attribure in tag (ex: <select name=""></select>)
-                                                 |                                                                                             
+| Option            | Type                           | Default           | Description                                                                                                                   |
+| ----------------- | ------------------------------ | ----------------- | -----------------------------------------------------------------------------------------------------------------------------|
+| yearModel         | input                          |                   | which binds select stores the user value in a variable                                                                       |
+| yearModelChange   | event                          |                   | On Change event when select the option                                                                                       |
+| isRequired        | boolean                        | false             | If field is required then this should set true                                                                               |
+| isQuarterYear     | boolean                        | false             | This should set true If you want to show Quarter year picker  ('Q1', 'Q2', 'Q3', 'Q4')                                        |
+| fieldName         | string                         | empty             | This name is name attribure in tag (ex: <select name=""></select>)                                                      |                                                                                             
 
 ## License
 
