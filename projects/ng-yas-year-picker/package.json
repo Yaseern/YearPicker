@@ -1,7 +1,7 @@
 {
-  "name": "ng-yas-year-picker",
-  "version": "1.0.3",
-  "description": "A simple year picker and the Quater financial picker. The module design by the angular with bootstrap.",
+  "name": "ngy-year-picker",
+  "version": "1.1.1",
+  "description": "A simple year picker and the Quarter financial picker. The module design by the angular with bootstrap.",
   "author": "Yaseer Munas",
   "repository": {
     "type": "git",
@@ -16,7 +16,9 @@
     "typescript",
     "javascript",
     "bootstrap",
-    "year picker"
+    "year picker",
+    "financial quarter year",
+    "year"
   ],
   "license": "MIT",
   "peerDependencies": {
