@@ -1,11 +1,22 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-</div>
-<h2>Here are some examples to help you start: </h2>
-<ul>
-  <NgY-YearPicker [yearModel]="model" (yearModelChange)="onChangeDoSomething()" [isRequired]="" [isQuarterYear]="false"></NgY-YearPicker>
-</ul>
 
+<div class="container">
+  <div style="text-align:center">
+    <h1>
+      Welcome to {{ title }}!
+    </h1>
+  </div>
+  <h3>Here are some examples to help you start:</h3>
+
+  <div class="row">
+    <span> Year Picker</span>
+    <NgY-YearPicker [yearModel]="model" (yearModelChange)="onChangeDoSomething()"></NgY-YearPicker>
+  </div>
+  <br>
+  <br>
+  <div class="row">
+    <span> Financial Year Quater Picker</span>
+    <NgY-YearPicker [yearModel]="model" (yearModelChange)="onChangeDoSomething()" [isQuarterYear]="true">
+    </NgY-YearPicker>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+.container .row {
+    position: relative;
+    align-items: center;  
+    padding: 1rem;  
+  } 
+  
+  span {
+    padding-right : 10px;
+  }
