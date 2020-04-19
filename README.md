@@ -1,27 +1,74 @@
+<div align="center">
+  <h1>ngy-year-picker</h1>
+  <br>
+  <h4>A year picker and financial quarter picker for Angular</h4>
+</div>
+
 # YearPickerLibrary
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
+DEMO: Update soon
 
-## To Use the Library 
+## Dependencies
+Latest version available for all version of Angular
 
-prerequisite
- * Angular 7
- * Bootstrap
- * Npm
+## Install
 
-Install the npm packge  `npm i yas-year-picker`
+```bash
+npm install ngy-year-picker
+```
 
-import the module `NgYasYearPickerModule`
+## Setup
+
+- If you are using angular-cli you can add it to your angular.json
+
+```ts
+"styles": [
+  "styles.scss",
+  "node_modules/bootstrap/dist/css/bootstrap.min.css" // try adding '../' if you're using bootstrap
+]
+```
+
+**step 1:** add NgYasYearPickerModule to app NgModule or import to the shared module
+
+```typescript
+import { CommonModule } from '@angular/common';
+
+import { NgYasYearPickerModule } from 'ngy-year-picker/ngy-year-picker';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    NgYasYearPickerModule// NgYasYearPickerModule added
+  ],
+  bootstrap: [AppComponent],
+  declarations: [AppComponent]
+})
+class AppModule {}
+```
+
+<NgY-YearPicker [yearModel]="model1" (yearModelChange)="onChangeDoSomething1()"></NgY-YearPicker>
+
+<NgY-YearPicker [yearModel]="model2" (yearModelChange)="onChangeDoSomething2()" [isQuarterYear]="true"></NgY-YearPicker>
 
 
-`<NgY-YearPicker [yearModel]="model" (yearModelChange)="onChangeDoSomething()" [isRequired]="" [isQuarterYear]="false"></NgY-YearPicker>`
+## Options
 
-## Development server
+| Option            | Type                           | Default           | Description                                                                                                                                     |
+| ----------------- | ------------------------------ | ----------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| yearModel         | input                          |                   | which binds select stores the user value in a variable   
+                                                 |
+| yearModelChange   | event                          |                   | On Change event when select the option                                                                                                          |
+| isRequired        | boolean                        | false             | If field is required then this should set true                                                                                                  |
+| isQuarterYear     | boolean                        | false             | This should set true If you want to show Quarter year picker  ('Q1', 'Q2', 'Q3', 'Q4')
+                                                 |
+| fieldName         | string                         | empty             | This name is name attribure in tag (ex: <select name=""></select>)
+                                                 |                                                                                             
 
-Before start the application, Run the `npm install`
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## License
 
-## Further help
+MIT
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+---
+
+> GitHub [@Yaseern](https://github.com/Yaseern) &nbsp;&middot;&nbsp;
