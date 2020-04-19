@@ -1,6 +1,24 @@
 {
   "name": "ng-yas-year-picker",
-  "version": "0.0.1",
+  "version": "1.0.3",
+  "description": "A simple year picker and the Quater financial picker. The module design by the angular with bootstrap.",
+  "author": "Yaseer Munas",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Yaseern/YearPickerLibrary.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Yaseern/YearPickerLibrary/issues"
+  },
+  "homepage": "https://github.com/Yaseern/YearPickerLibrary",
+  "keywords": [
+    "angular",
+    "typescript",
+    "javascript",
+    "bootstrap",
+    "year picker"
+  ],
+  "license": "MIT",
   "peerDependencies": {
     "@angular/common": "^7.2.0",
     "@angular/core": "^7.2.0"
