@@ -8,17 +8,9 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Year Picker Library';
 
-  model: any;
-  model2: any;
-  currentYear = new Date().getFullYear();
-
-  isQuater = true
+  model : any;
 
   onChangeDoSomething() {
-    alert(this.model)
-  }
-
-  onChangeDoSomething2() {
-    alert(this.model2)
+    
   }
 }

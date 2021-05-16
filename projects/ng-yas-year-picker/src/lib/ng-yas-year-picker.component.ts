@@ -1,63 +1,38 @@
-import { Component, Input, forwardRef, HostBinding, OnInit } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 
 @Component({
-  selector: 'ngy-year-picker',
+  selector: 'NgY-YearPicker',
   template: `
-  <select class="form-control year-select" name="{{fieldName}}" [id]="id" (change)="change(select.value)" #select
-  [disabled]="isDisabled" required="{{isRequired}}">
-    <option [value]=""></option>
-    <option *ngFor="let year of yearList" [value]="year" [selected]="_value===year">{{year}}</option>
+  <select class="form-control year-select" name="{{fieldName}}" [(ngModel)]="model" (change)="onChangeSelection()" required="{{isRequired}}">
+    <option *ngFor="let year of yearList" value="{{year}}">{{year}}</option>
   </select>
   `,
-  styles: [],
-  // changeDetection: ChangeDetectionStrategy.OnPush,
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => NgYasYearPickerComponent),
-      multi: true,
-    },
-  ],
+  styles: []
 })
-export class NgYasYearPickerComponent implements ControlValueAccessor, OnInit {
+export class NgYasYearPickerComponent implements OnInit, OnChanges {
 
   @Input() isRequired: boolean = false;
-  @Input() isDisabled: boolean = false;
   @Input() fieldName: string = "";
-  @Input() isQuarterYear: boolean;
+  @Input() isQuarterYear: boolean = false;
 
-  @HostBinding("attr.id")
-  externalId = "";
-
-  @Input()
-  set id(value: string) {
-    this._ID = value;
-    this.externalId = null;
-  }
-
-  get id() {
-    return this._ID;
-  }
-
-  private _ID = "";
-
-  private _value
-  onChange: any = () => { };
-  onTouched: any = () => { };
+  @Input() yearModel: number;
+  @Output() yearModelChange: EventEmitter<number> = new EventEmitter<number>();
 
   yearList: any[] = [];
+  model: number;
   constructor() { }
 
   ngOnInit() {
-    this.initialize();
-  }
-
-  initialize() {
     if (this.isQuarterYear) {
       this.configureFinancialQuarterSelection();
     } else {
       this.configureYearSelection();
+    }
+  }
+
+  ngOnChanges() {
+    if (this.yearModel) {
+      this.model = this.yearModel;
     }
   }
 
@@ -67,11 +42,10 @@ export class NgYasYearPickerComponent implements ControlValueAccessor, OnInit {
     let maxYear = 10;
     let minYear = 10;
 
-    const selectedValue = this._value ? Number(this._value) : todayYear;
-    if (selectedValue > todayYear) {
-      maxYear = (selectedValue - todayYear) + 10;
-    } else if (selectedValue < todayYear) {
-      minYear = (todayYear - selectedValue) + 10;
+    if (this.model > todayYear) {
+      maxYear = (this.model - todayYear) + 10;
+    } else if (this.model < todayYear) {
+      minYear = (todayYear - this.model) + 10;
     }
 
     for (let i = todayYear - minYear; i <= todayYear + maxYear; i++) {
@@ -83,23 +57,12 @@ export class NgYasYearPickerComponent implements ControlValueAccessor, OnInit {
     this.yearList = ['Q1', 'Q2', 'Q3', 'Q4'];
   }
 
-  change(val) {
-    this.onChange(val);
-  }
+  onChangeSelection() {
+    this.yearModelChange.emit(this.model);
 
-  registerOnChange(fn): void {
-    this.onChange = fn;
-  }
-
-  writeValue(value): void {
-    this._value = value;
-    if (!this.isQuarterYear && this._value) {
+    if (!this.isQuarterYear) {
       this.configureYearSelection();
-      this.onChange(value);
     }
   }
 
-  registerOnTouched(fn): void {
-    this.onTouched = fn;
-  }
 }
