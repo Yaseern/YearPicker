@@ -1,7 +1,7 @@
 {
   "name": "ngy-year-picker",
-  "version": "1.1.1",
-  "description": "A simple year picker and the Quarter financial picker. The module design by the angular with bootstrap.",
+  "version": "2.0.0",
+  "description": "A simple year picker and the Quarter financial picker. Supported in template driven and reactive forms",
   "author": "Yaseer Munas",
   "repository": {
     "type": "git",
@@ -18,7 +18,8 @@
     "bootstrap",
     "year picker",
     "financial quarter year",
-    "year"
+    "year",
+    "angular year picker"
   ],
   "license": "MIT",
   "peerDependencies": {
