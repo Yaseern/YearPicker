@@ -1,12 +1,12 @@
 <div align="center">
   <h1>ngy-year-picker</h1>
   <br>
-  <h4>A year picker and financial quarter picker for Angular</h4>
+  <h4>A year picker and financial quarter picker for Angular. Support for template driven and reactive forms</h4>
 </div>
 
 # YearPickerLibrary
 
-DEMO: Update soon
+DEMO: https://yaseern.github.io/awesomeAngular/year
 
 ## Dependencies
 Latest version available for all version of Angular
@@ -46,20 +46,21 @@ import { NgYasYearPickerModule } from 'ngy-year-picker/ngy-year-picker';
 class AppModule {}
 ```
 
-<NgY-YearPicker [yearModel]="model1" (yearModelChange)="onChangeDoSomething1()"></NgY-YearPicker>
+```html
+<ngy-year-picker [(ngModel)]="model1" (change)="onChangeDoSomething1()" id="year-picker1"></ngy-year-picker>
 
-<NgY-YearPicker [yearModel]="model2" (yearModelChange)="onChangeDoSomething2()" [isQuarterYear]="true"></NgY-YearPicker>
+<ngy-year-picker [(ngModel)]="model2" (change)="onChangeDoSomething2()" id="year-picker2" [isQuarterYear]="true"></ngy-year-picker>
 
+```
 
 ## Options
 
 | Option            | Type                           | Default           | Description                                                                                                                   |
 | ----------------- | ------------------------------ | ----------------- | -----------------------------------------------------------------------------------------------------------------------------|
-| yearModel         | input                          |                   | which binds select stores the user value in a variable                                                                       |
-| yearModelChange   | event                          |                   | On Change event when select the option                                                                                       |
 | isRequired        | boolean                        | false             | If field is required then this should set true                                                                               |
 | isQuarterYear     | boolean                        | false             | This should set true If you want to show Quarter year picker  ('Q1', 'Q2', 'Q3', 'Q4')                                        |
-| fieldName         | string                         | empty             | This name is name attribure in tag (ex: <select name=""></select>)                                                      |                                                                                             
+| fieldName         | string                         | empty             | This name is name attribure in tag (ex: <select name=""></select>)                                                            | 
+| isDisabled        | boolean                        | false             | If field disabled then this should set true                                                                                  | 
 
 ## License
 
