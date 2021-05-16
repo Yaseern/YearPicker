@@ -1,5 +1,3 @@
-<!--The content below is only a placeholder and can be replaced.-->
-
 <div class="container">
   <div style="text-align:center">
     <h1>
@@ -9,14 +7,23 @@
   <h3>Here are some examples to help you start:</h3>
 
   <div class="row">
-    <span> Year Picker</span>
-    <NgY-YearPicker [yearModel]="model" (yearModelChange)="onChangeDoSomething()"></NgY-YearPicker>
+    <span> Current Year</span>
+    <ngy-year-picker [(ngModel)]="currentYear" id="year-picker3"></ngy-year-picker>
+    <div class="curr-year">selected year : {{currentYear}}</div>
   </div>
   <br>
   <br>
+
   <div class="row">
-    <span> Financial Year Quater Picker</span>
-    <NgY-YearPicker [yearModel]="model" (yearModelChange)="onChangeDoSomething()" [isQuarterYear]="true">
-    </NgY-YearPicker>
+    <span> Choose Year</span>
+    <ngy-year-picker [(ngModel)]="model" (change)="onChangeDoSomething()" id="year-picker1"></ngy-year-picker>
+  </div>
+  <br>
+  <br>
+
+  <div class="row">
+    <span> Choose Financial Year / Quater</span>
+    <ngy-year-picker [(ngModel)]="model2" (change)="onChangeDoSomething2()" [isQuarterYear]="true" id="year-picker2">
+    </ngy-year-picker>
   </div>
 </div>
